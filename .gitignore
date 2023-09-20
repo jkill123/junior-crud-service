@@ -34,3 +34,4 @@ docker.conf
 /logs
 /cucumber/Gemfile.lock
 
+/.idea/
