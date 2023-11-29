@@ -1,7 +1,7 @@
 package com.company.juniorcrudservice.service.employee;
 
 import com.company.juniorcrudservice.domain.Employee;
-import com.company.juniorcrudservice.model.EmployeeDto;
+import com.company.juniorcrudservice.dto.EmployeeDto;
 import com.company.juniorcrudservice.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

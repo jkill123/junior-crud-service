@@ -1,6 +1,6 @@
 package com.company.juniorcrudservice.domain;
 
-import com.company.juniorcrudservice.model.EmployeeDto;
+import com.company.juniorcrudservice.dto.EmployeeDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

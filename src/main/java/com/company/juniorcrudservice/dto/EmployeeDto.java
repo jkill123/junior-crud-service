@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.model;
+package com.company.juniorcrudservice.dto;
 
 import com.company.juniorcrudservice.domain.Employee;
 import lombok.*;
