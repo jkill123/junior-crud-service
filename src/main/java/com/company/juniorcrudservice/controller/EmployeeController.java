@@ -1,7 +1,7 @@
 package com.company.juniorcrudservice.controller;
 
 import com.company.juniorcrudservice.domain.Employee;
-import com.company.juniorcrudservice.model.EmployeeDto;
+import com.company.juniorcrudservice.dto.EmployeeDto;
 import com.company.juniorcrudservice.service.employee.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

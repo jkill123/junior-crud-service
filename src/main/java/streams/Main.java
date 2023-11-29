@@ -1,3 +1,5 @@
+package streams;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreType;
 
 import java.util.*;
@@ -160,21 +162,21 @@ public class Main {
         // І ми хочемо знайти суму цін тих телефонів, у яких ціна менша за певне значення.
         // Для цього використовуємо третю версію методу reduce:
 
-        Stream<Phone> phoneStream = Stream.of(
-                new Phone("iPhone 13", 54000),
-                new Phone("Lumia 950", 45000),
-                new Phone("Samsung S 10", 44000),
-                new Phone("LG G 10", 43000));
-
-        int sum = phoneStream.reduce(0,
-                (x, y) -> {
-                    if (y.getPrice() < 50000)
-                        return x + y.getPrice();
-                    else
-                        return x + 0;
-                },
-                (x, y) -> x + y);
-
-        System.out.println(sum);
+//        Stream<Phone> phoneStream = Stream.of(
+//                new Phone("iPhone 13", 54000),
+//                new Phone("Lumia 950", 45000),
+//                new Phone("Samsung S 10", 44000),
+//                new Phone("LG G 10", 43000));
+//
+//        int sum = phoneStream.reduce(0,
+//                (x, y) -> {
+//                    if (y.getPrice() < 50000)
+//                        return x + y.getPrice();
+//                    else
+//                        return x + 0;
+//                },
+//                (x, y) -> x + y);
+//
+//        System.out.println(sum);
     }
 }
