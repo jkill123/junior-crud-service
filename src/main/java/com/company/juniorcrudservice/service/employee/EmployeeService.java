@@ -1,7 +1,7 @@
 package com.company.juniorcrudservice.service.employee;
 
 
-import com.company.juniorcrudservice.domain.Employee;
+import com.company.juniorcrudservice.model.Employee;
 import com.company.juniorcrudservice.dto.EmployeeDto;
 
 import java.util.List;

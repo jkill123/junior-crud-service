@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.domain;
+package com.company.juniorcrudservice.model;
 
 import com.company.juniorcrudservice.dto.EmployeeDto;
 import jakarta.persistence.Entity;

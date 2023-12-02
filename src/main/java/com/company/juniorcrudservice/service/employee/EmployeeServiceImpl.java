@@ -1,12 +1,14 @@
 package com.company.juniorcrudservice.service.employee;
 
-import com.company.juniorcrudservice.domain.Employee;
+import com.company.juniorcrudservice.model.Employee;
 import com.company.juniorcrudservice.dto.EmployeeDto;
 import com.company.juniorcrudservice.repository.EmployeeRepository;
+import com.company.juniorcrudservice.repository.jdbc.EmployeeJDBCRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,25 +18,46 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+
     private final EmployeeRepository employeeRepository;
+    private final EmployeeJDBCRepository employeeJDBCRepository;
+
+//    @Override
+//    public Optional<List<Employee>> getEmployees() {
+//        log.debug("Get employees");
+//        return Optional.of(employeeRepository.findAll());
+//    }
 
     @Override
     public Optional<List<Employee>> getEmployees() {
         log.debug("Get employees");
-        return Optional.of(employeeRepository.findAll());
+        return Optional.of(employeeJDBCRepository.getAll());
     }
 
+//    @Override
+//    @Async
+//    public Optional<Employee> getEmployeeById(Integer employeeId) {
+//        log.debug("Get employee by id: " + employeeId);
+//        return Optional.of(employeeRepository.getOne(employeeId));
+//    }
+
     @Override
-    @Async
     public Optional<Employee> getEmployeeById(Integer employeeId) {
         log.debug("Get employee by id: " + employeeId);
-        return Optional.of(employeeRepository.getOne(employeeId));
+        return Optional.of(employeeJDBCRepository.getById(employeeId.intValue()));
     }
 
+//    @Override
+//    public void saveNewEmployee(EmployeeDto employeeDto) {
+//        log.debug("Save employee: " + employeeDto);
+//        employeeRepository.save(new Employee(employeeDto));
+//    }
+
     @Override
+    @Transactional
     public void saveNewEmployee(EmployeeDto employeeDto) {
         log.debug("Save employee: " + employeeDto);
-        employeeRepository.save(new Employee(employeeDto));
+        employeeJDBCRepository.save(employeeDto);
     }
 
     @Override
@@ -50,9 +73,15 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.save(employee);
     }
 
+//    @Override
+//    public void deleteEmployeeById(Integer employeeId) {
+//        log.debug("delete employee with id: " + employeeId);
+//        employeeRepository.deleteById(employeeId);
+//    }
+
     @Override
     public void deleteEmployeeById(Integer employeeId) {
         log.debug("delete employee with id: " + employeeId);
-        employeeRepository.deleteById(employeeId);
+        employeeJDBCRepository.deleteById(employeeId);
     }
 }

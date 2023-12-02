@@ -1,19 +1,15 @@
 package com.company.juniorcrudservice.controller;
 
-import com.company.juniorcrudservice.domain.Employee;
+import com.company.juniorcrudservice.model.Employee;
 import com.company.juniorcrudservice.dto.EmployeeDto;
 import com.company.juniorcrudservice.service.employee.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 
-
-/**
- * @author Pinchuk Yevhen
- * @created 27/03/2020 - 11:04
- */
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/employee")
 @RestController
@@ -23,7 +19,7 @@ public class EmployeeController {
 
     @CrossOrigin("*")
     @GetMapping()
-    public Optional<List<Employee>> getEmployees(){
+    public Optional<List<Employee>> getEmployees() {
         return employeeService.getEmployees();
     }
 
@@ -32,22 +28,32 @@ public class EmployeeController {
         return employeeService.getEmployeeById(employeeId);
     }
 
+    @GetMapping("/test")
+    public Object getEmployeeById() {
+        Optional<Employee> employeeById = employeeService.getEmployeeById(123);
+        employeeById2 = employeeService.getEmployees();
+//        employeeById2 = employeeService.deleteEmployeeById();
+//        employeeById2 = employeeService.updateEmployee();
+//        employeeById2 = employeeService.saveNewEmployee();
+        return null;
+    }
+
     @CrossOrigin("*")
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
-    public void createNewEmployee(@RequestBody EmployeeDto employeeDto){
+    public void createNewEmployee(@RequestBody EmployeeDto employeeDto) {
         employeeService.saveNewEmployee(employeeDto);
     }
 
     @PutMapping("/{employeeId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateEmployeeById(@PathVariable("employeeId") Integer employeeId, @RequestBody EmployeeDto employeeDto){
+    public void updateEmployeeById(@PathVariable("employeeId") Integer employeeId, @RequestBody EmployeeDto employeeDto) {
         employeeService.updateEmployee(employeeId, employeeDto);
     }
 
     @DeleteMapping("/{employeeId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteEmployeeById(@PathVariable("employeeId") Integer employeeId){
+    public void deleteEmployeeById(@PathVariable("employeeId") Integer employeeId) {
         employeeService.deleteEmployeeById(employeeId);
     }
 }
