@@ -28,16 +28,6 @@ public class EmployeeController {
         return employeeService.getEmployeeById(employeeId);
     }
 
-    @GetMapping("/test")
-    public Object getEmployeeById() {
-        Optional<Employee> employeeById = employeeService.getEmployeeById(123);
-        employeeById2 = employeeService.getEmployees();
-//        employeeById2 = employeeService.deleteEmployeeById();
-//        employeeById2 = employeeService.updateEmployee();
-//        employeeById2 = employeeService.saveNewEmployee();
-        return null;
-    }
-
     @CrossOrigin("*")
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)

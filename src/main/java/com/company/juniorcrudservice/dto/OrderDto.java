@@ -8,10 +8,10 @@ import java.util.List;
 
 @Data
 @RequiredArgsConstructor
-public class Order {
+public class OrderDto {
 
     private Integer id;
     private LocalDate date;
     private Double cost;
-    private List<Product> products;
+    private List<ProductDto> products;
 }
