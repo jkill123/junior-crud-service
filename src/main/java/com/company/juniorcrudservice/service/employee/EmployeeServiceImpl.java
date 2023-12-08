@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Slf4j
@@ -29,9 +28,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 //    }
 
     @Override
-    public Optional<List<Employee>> getEmployees() {
+    public List<Employee> getEmployees() {
         log.debug("Get employees");
-        return Optional.of(employeeJDBCRepository.getAll());
+        return employeeJDBCRepository.getAll();
     }
 
 //    @Override
@@ -42,9 +41,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 //    }
 
     @Override
-    public Optional<Employee> getEmployeeById(Integer employeeId) {
+    public Employee getEmployeeById(Integer employeeId) {
         log.debug("Get employee by id: " + employeeId);
-        return Optional.of(employeeJDBCRepository.getById(employeeId.intValue()));
+        return employeeJDBCRepository.getById(employeeId.intValue());
     }
 
 //    @Override

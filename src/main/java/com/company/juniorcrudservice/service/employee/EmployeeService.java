@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Optional;
 
 public interface EmployeeService {
-    Optional<Employee> getEmployeeById(Integer employeeId);
-    Optional<List<Employee>> getEmployees();
+    Employee getEmployeeById(Integer employeeId);
+    List<Employee> getEmployees();
     void saveNewEmployee(EmployeeDto employeeDto);
     void updateEmployee(Integer employeeId, EmployeeDto employeeDto);
     void deleteEmployeeById(Integer employeeId);
