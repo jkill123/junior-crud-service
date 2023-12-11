@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.concurency;
+package concurency;
 
 
 import java.io.IOException;

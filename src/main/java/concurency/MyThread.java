@@ -1,17 +1,14 @@
-package com.company.juniorcrudservice.concurency;
+package concurency;
 
-import java.util.concurrent.Callable;
-
-public class MyThreadCallable implements Callable {
+public class MyThread extends Thread{
 
     @Override
-    public Object call() {
+    public void run() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             System.out.println("why you wake me up?");
         }
         System.out.println("keep working");
-        return null;
     }
 }

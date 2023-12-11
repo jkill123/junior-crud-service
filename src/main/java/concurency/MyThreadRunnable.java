@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.concurency;
+package concurency;
 
 public class MyThreadRunnable implements Runnable{
 
