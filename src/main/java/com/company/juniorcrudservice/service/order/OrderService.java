@@ -1,15 +1,14 @@
 package com.company.juniorcrudservice.service.order;
 
 
-import com.company.juniorcrudservice.dto.OrderDto;
-import com.company.juniorcrudservice.model.Order;
+import com.company.juniorcrudservice.dto.order.OrderDto;
 
 import java.util.List;
 
 public interface OrderService {
-    Order getOrderById(Integer id);
+    OrderDto getOrderById(Integer id);
 
-    List<Order> getOrders();
+    List<OrderDto> getOrders();
 
     void save(OrderDto dto);
 

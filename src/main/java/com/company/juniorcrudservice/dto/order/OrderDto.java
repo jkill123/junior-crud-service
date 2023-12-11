@@ -1,13 +1,14 @@
-package com.company.juniorcrudservice.dto;
+package com.company.juniorcrudservice.dto.order;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class OrderDto {
 
     private Integer id;

@@ -1,6 +1,6 @@
 package com.company.juniorcrudservice.repository.mappers;
 
-import com.company.juniorcrudservice.model.Product;
+import com.company.juniorcrudservice.model.order.data.Product;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
