@@ -48,13 +48,13 @@ public class OrderController {
 
     @PutMapping("/{orderId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateEmployeeById(@PathVariable("orderId") Integer orderId, @RequestBody OrderDto orderDto) {
+    public void updateOrderById(@PathVariable("orderId") Integer orderId, @RequestBody OrderDto orderDto) {
         orderService.update(orderId, orderDto);
     }
 
     @DeleteMapping("/{orderId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteEmployeeById(@PathVariable("orderId") Integer orderId) {
+    public void deleteOrderyId(@PathVariable("orderId") Integer orderId) {
         orderService.delete(orderId);
     }
 }

@@ -6,6 +6,8 @@ import com.company.juniorcrudservice.model.order.data.Order;
 import com.company.juniorcrudservice.repository.order.data.OrderRepository;
 import com.company.juniorcrudservice.service.order.OrderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +29,16 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderDto> getOrders() {
         Iterable<Order> orders = orderRepository.findAll();
         return orderConverter.fromModel(orders);
+    }
+
+//    page - Page number
+//    size - Page Size
+//    sort - sort by(Order by column name)
+//    direction - ASC / DESC
+    @Override
+    public Page<Order> getOrdersPage(Pageable pageable) {
+        Page<Order> all = orderRepository.findAll(pageable);
+        return all;
     }
 
     @Override

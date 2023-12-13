@@ -2,8 +2,6 @@ package com.company.juniorcrudservice.model.order.data;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.domain.Persistable;
-import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDate;
