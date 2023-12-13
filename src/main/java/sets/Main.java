@@ -2,18 +2,21 @@ package sets;
 
 import com.company.juniorcrudservice.dto.EmployeeDto;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-
+//        Object object = new Object();
+//        boolean equals = object.equals(new Object());
+//        int hashCode = object.hashCode();
 //        ArrayList<Object> persons = new ArrayList<>();
 //        ArrayList<Object> countryIndexesList = new ArrayList<>();
 //        EmployeeDto jhon = new EmployeeDto();
-        Set<EmployeeDto> countryIndexes = new HashSet<>();
-//        countryIndexes.add(jhon);
+        Set<Student> guestList = new HashSet<>(9);
+//        boolean contains = guestList.contains(jhon.getSurName());
 //
 //        jhon.setName("Alice");
 
@@ -23,7 +26,8 @@ public class Main {
         //todo 1.Hash set швидкість пошуку елемету O(1)
         //todo 2.Hash % ост от ділення на розмір массиву(buckets) -> номер бакету -> add object
         //todo 2.Hash % get object -> found bucket by hash -> found object by equals -> result
-        //todo 3.Hash if we adding elements with same hash? -> gonna be LinkedList O(n)
+        //todo 3.Hash if we adding always(override hash code == 1) elements with same hash? -> gonna be LinkedList O(n)
+        //todo 3.Hash if we adding elements with same hash and equals -> ignore operation (no duplicates)
 
 
 
@@ -34,6 +38,7 @@ public class Main {
         //  3 Data members in the class must be declared as final so that we can’t change the value of it after object creation.
         //  4 A parameterized constructor should initialize all the fields performing a deep copy so that data members can’t be modified with an object reference.
         //  5 Deep Copy of objects should be performed in the getter methods to return a copy rather than returning the actual object reference)
+        //  6 Getters only, no setters to modify data inside object
 
         Set<Person> personSet = new TreeSet<>();
         personSet.add(new Person("bob", 22));
@@ -45,12 +50,13 @@ public class Main {
 //        numbers.add(1);
 //        numbers.add(22);
 //        numbers.add(5);
+//        System.out.println(numbers);
 
         System.out.println(personSet);
-        Person person1 = new Person("bob", 23);
-        Person person2 = new Person("bob", 24);
-        int result = person1.compareTo(person2);
-        System.out.println(result);
+//        Person person1 = new Person("bob", 23);
+//        Person person2 = new Person("bob", 24);
+//        int result = person1.compareTo(person2);
+//        System.out.println(result);
 
     }
     //todo min or max O(log(n))
