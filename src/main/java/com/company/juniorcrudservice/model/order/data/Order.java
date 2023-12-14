@@ -2,6 +2,7 @@ package com.company.juniorcrudservice.model.order.data;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDate;
@@ -19,5 +20,6 @@ public class Order {
     private Integer id;
     private LocalDate date;
     private Double cost;
+    @MappedCollection(idColumn = "id")
     private List<Product> product;
 }
