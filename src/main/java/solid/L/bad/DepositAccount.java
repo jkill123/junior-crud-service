@@ -7,7 +7,7 @@ public class DepositAccount extends Account{
     public BigDecimal balance(String numberAccount){
         //logic
         return new BigDecimal(10.2);
-    };
+    }
     @Override
     public void refill(String numberAccount, BigDecimal sum){
         //logic

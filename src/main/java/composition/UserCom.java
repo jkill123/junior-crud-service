@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class UserCom {
 
-    //todo aggregation
+    //todo composition
     private int age;
     private String name;
     private Address address;
