@@ -6,6 +6,7 @@ import com.company.juniorcrudservice.model.order.data.Order;
 import com.company.juniorcrudservice.repository.order.data.OrderRepository;
 import com.company.juniorcrudservice.service.order.OrderService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
@@ -45,6 +47,7 @@ public class OrderServiceImpl implements OrderService {
     public void save(OrderDto dto) {
         Order order = orderConverter.toModel(dto);
         orderRepository.save(order);
+        log.debug("Order saved: " + order);
     }
 
     @Override
