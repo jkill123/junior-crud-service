@@ -1,27 +1,36 @@
 package basic.streams;
 
+import basic.composition.Address;
+
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import static java.util.Arrays.asList;
 
 public class Main {
     public static void main(String[] args) {
         //todo streams:
         // 1 got from scala
         // 2 based on lambda
-        // Once stream created, the instance will not modify its source
+        // Once stream created, the stream instance will not modify its source
 
         // todo stream creation
 
+//        Stream<String> streamEmpty = Stream.empty();
 //        Stream<String> stringStream = Stream.of("zero", "one", "two");
 //        Stream<String> streamBuilder = Stream.<String>builder().add("one").add("two").build();
-//        streamBuilder.forEach(s -> System.out.println());
+//        streamBuilder.forEach(s -> System.out.println(s));
 
 //        IntStream.range(1, 30).forEach(System.out::println);
 //
-//        List<String> numbers = List.of("zero", "one", "two");
+//        List<String> numbers = List.of("zero", "one", "two", "two");
 //        numbers.stream()
-//                .filter(s -> s.length() > 3)
+//                .filter(number -> number.length() > 2)
+//                .sorted()
 //                .forEach(System.out::println);
-//
+
 //        System.out.println(numbers);
 //
 //        numbers.stream()
@@ -48,7 +57,6 @@ public class Main {
 
         //todo
 //        books.stream()
-//                .parallel()
 //                .filter(book -> book.getNumberOfPages() > 500)
 //                .peek(book -> System.out.println(book.getAuthor()))
 //                .map(book -> book.getName() + " " + book.getNumberOfPages())
@@ -57,11 +65,18 @@ public class Main {
 //        long totalBooks = books.stream()
 //                .filter(book -> book.getNumberOfPages() > 500)
 //                .distinct()
+//                .peek(System.out::println)
 //                .count();
 
 //        System.out.println(totalBooks);
 
+        // todo collector to map
+//        Map<String, Integer> collected = books.stream()
+//                .filter(book -> book.getNumberOfPages() > 500)
+//                .distinct()
+//                .collect(Collectors.toMap(Book::getName, Book::getNumberOfPages));
 
+//        System.out.println(collected);
 
 
         //todo flatmap
@@ -97,10 +112,7 @@ public class Main {
 //        List<String> petNames = humans.stream()
 //                .map(human -> human.getPets())
 //                .flatMap(pets -> pets.stream())
-//                .collect(Collectors.toList());
-
-//        List<String> petNames = humans.stream()
-//                .flatMap(human -> human.getPets().stream())
+//                .sorted()
 //                .collect(Collectors.toList());
 //
 //        System.out.println(petNames);
