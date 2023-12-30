@@ -2,8 +2,9 @@ package com.company.juniorcrudservice.service.order.data;
 
 import com.company.juniorcrudservice.converter.OrderConverter;
 import com.company.juniorcrudservice.dto.order.OrderDto;
-import com.company.juniorcrudservice.model.order.data.Order;
-import com.company.juniorcrudservice.repository.order.data.OrderRepository;
+import com.company.juniorcrudservice.model.order.jpa.Order;
+import com.company.juniorcrudservice.repository.order.spring_jpa.OrderRepository;
+import com.company.juniorcrudservice.service.order.jpa.OrderServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

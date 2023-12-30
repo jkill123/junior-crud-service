@@ -2,7 +2,7 @@ package com.company.juniorcrudservice.service.order;
 
 
 import com.company.juniorcrudservice.dto.order.OrderDto;
-import com.company.juniorcrudservice.model.order.data.Order;
+import com.company.juniorcrudservice.model.order.jpa.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

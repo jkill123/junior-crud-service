@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.controller.order.data;
+package com.company.juniorcrudservice.controller.order;
 
 import com.company.juniorcrudservice.controller.response.ApiResponse;
 import com.company.juniorcrudservice.dto.order.OrderDto;
