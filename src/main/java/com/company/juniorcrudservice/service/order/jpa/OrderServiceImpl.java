@@ -2,6 +2,7 @@ package com.company.juniorcrudservice.service.order.jpa;
 
 import com.company.juniorcrudservice.converter.OrderConverter;
 import com.company.juniorcrudservice.dto.order.OrderDto;
+import com.company.juniorcrudservice.mappers.OrderMapper;
 import com.company.juniorcrudservice.model.order.jpa.Order;
 import com.company.juniorcrudservice.repository.order.spring_jpa.OrderRepository;
 import com.company.juniorcrudservice.service.order.OrderService;
@@ -20,17 +21,18 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderRepository orderRepository;
     private final OrderConverter orderConverter;
+    private final OrderMapper orderMapper;
 
     @Override
     public OrderDto getOrderById(Integer id) {
         Order order = orderRepository.findById(id).orElseThrow();
-        return orderConverter.fromModel(order);
+        return orderMapper.orderToOrderDto(order);
     }
 
     @Override
     public List<OrderDto> getOrders() {
         Iterable<Order> orders = orderRepository.findAll();
-        return orderConverter.fromModel(orders);
+        return orderMapper.toOrderDtoList(orders);
     }
 
 //    page - Page number
