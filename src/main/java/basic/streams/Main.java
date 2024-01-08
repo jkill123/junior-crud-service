@@ -124,7 +124,7 @@ public class Main {
         // 3 form: U reduce(U identity, BiFunction<U,? super T,U> accumulator, BinaryOperator<U> combiner)
 
 
-        //todo example 1 form -> retunrn optional
+        //todo example 1 form -> return optional
         // Об'єкт BinaryOperator<T> є функцією, яка приймає два елементи і виконує над ними деяку операцію, повертаючи результат.
         // При цьому метод reduce зберігає результат і потім знову ж таки застосовує до цього результату і
         // наступного елемента в наборі бінарну операцію.
@@ -153,6 +153,7 @@ public class Main {
 
 
 //        Stream<Integer> numberStream = Stream.of(-4, 3, -2, 1);
+////        Stream<Integer> numberStream = Stream.empty();
 //        int identity = 2;
 //        // 2 * -4 = 8
 //        // 8 * 3 = 24
@@ -163,14 +164,14 @@ public class Main {
 
 
         //todo example form 3 return diff type
-        // І ми хочемо знайти суму цін тих телефонів, у яких ціна менша за певне значення.
+        // І ми хочемо знайти суму цін тих телефонів, у яких ціна менша за певне значення(50000).
         // Для цього використовуємо третю версію методу reduce:
 
 //        Stream<Phone> phoneStream = Stream.of(
 //                new Phone("iPhone 13", 54000),
 //                new Phone("Lumia 950", 45000),
-//                new Phone("Samsung S 10", 44000),
-//                new Phone("LG G 10", 43000));
+//                new Phone("Samsung S 10", 45000),
+//                new Phone("LG G 10", 45000));
 //
 //        int sum = phoneStream.reduce(0,
 //                (x, y) -> {
