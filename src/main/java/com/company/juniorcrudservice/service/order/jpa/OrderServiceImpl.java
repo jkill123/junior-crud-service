@@ -32,6 +32,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<OrderDto> getOrders() {
         Iterable<Order> orders = orderRepository.findAll();
+        log.debug("Get all orders: " + orders);
         return orderMapper.toOrderDtoList(orders);
     }
 
@@ -56,7 +57,8 @@ public class OrderServiceImpl implements OrderService {
     public void update(Integer id, OrderDto dto) {
         Order old = orderRepository.findById(id).orElseThrow();
         Order updated = orderConverter.toModel(old, dto);
-        orderRepository.save(updated);
+        Order saved = orderRepository.save(updated);
+        log.debug("Order updated: " + saved);
     }
 
     @Override
