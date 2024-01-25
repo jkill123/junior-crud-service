@@ -58,5 +58,5 @@
     </logger>
 
     <logger name="org.graylog2.gelfclient.transport.GelfTcpTransport" level="ERROR" additivity="false" />
-
+<!-- - -Dlogging.level.com.digitalturbine.services.igniteclientupdate.service.consumer.AppChangeConsumerService=DEBUG-->
 </configuration>

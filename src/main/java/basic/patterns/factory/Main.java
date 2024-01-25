@@ -1,4 +1,4 @@
-package basic.factory;
+package basic.patterns.factory;
 
 public class Main {
     public static void main(String[] args) {
