@@ -9,7 +9,7 @@ public class JDBCExample {
     private static final String GET_USERS_SQL = "SELECT * FROM users";
     private static final String INSERT_USER_SQL =
             "INSERT INTO users(name, email, age)" +
-            "VALUES (?, ?, ?)";
+                    "VALUES (?, ?, ?)";
     private static final String UPDATE_USER_SQL =
             "UPDATE users SET name = ?, age = ? WHERE id = ?";
     private static final String SELECT_FROM_USERS_WHERE_ID_SQL = "SELECT * FROM users WHERE id = ?";
@@ -17,21 +17,21 @@ public class JDBCExample {
 
     public static void main(String[] args) throws SQLException {
         // todo CRUD
-        Connection connection = jdbcConnection();
-//        User user = findUserById(connection, 7);
+//        Connection connection = jdbcConnection();
+//        User user = findUserById(connection, 13);
 //        List<User> allUsers = findAllUsers(connection);
 //        System.out.println(allUsers);
 //        save(connection, User.builder()
 //                .name("Tony")
 //                .email("tony@gmail.com")
 //                .age(35)
-////                .build());
-//                update(connection, User.builder()
+//                .build());
+//        update(connection, User.builder()
 //                .name("TonyUpdated")
 //                .age(44)
-//                .build(), 7);
-//        delete(connection, 7);
-
+//                .build(), 13);
+//        delete(connection, 13);
+//        connection.close();
     }
 
     public static void save(Connection conn, User user) throws SQLException {
