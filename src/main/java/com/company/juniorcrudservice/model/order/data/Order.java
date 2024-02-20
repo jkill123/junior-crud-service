@@ -20,6 +20,6 @@ public class Order {
     private Integer id;
     private LocalDate date;
     private Double cost;
-    @MappedCollection(idColumn = "orders")
+    @MappedCollection(idColumn = "orders", keyColumn = "id")
     private List<Product> product;
 }
