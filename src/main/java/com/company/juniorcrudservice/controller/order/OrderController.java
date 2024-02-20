@@ -4,6 +4,9 @@ import com.company.juniorcrudservice.controller.response.ApiResponse;
 import com.company.juniorcrudservice.dto.order.OrderDto;
 import com.company.juniorcrudservice.service.order.OrderService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
@@ -23,6 +26,25 @@ public class OrderController {
     public ApiResponse<List<OrderDto>> getOrders() {
         ApiResponse<List<OrderDto>> response = new ApiResponse<>();
         List<OrderDto> orders = orderService.getOrders();
+        if (!CollectionUtils.isEmpty(orders)) {
+            response.setSuccess(true);
+            response.setData(orders);
+        }
+        return response;
+    }
+
+    @CrossOrigin("*")
+    @GetMapping("/pagination")
+    public ApiResponse<List<OrderDto>> getOrdersPagination(@RequestParam(value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER, required = false) int pageNo,
+                                                           @RequestParam(value = "pageSize", defaultValue = AppConstants.DEFAULT_PAGE_SIZE, required = false) int pageSize,
+                                                           @RequestParam(value = "sortBy", defaultValue = AppConstants.DEFAULT_SORT_BY, required = false) String sortBy,
+                                                           @RequestParam(value = "sortDir", defaultValue = AppConstants.DEFAULT_SORT_DIRECTION, required = false) String sortDir) {
+
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+        Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
+
+        ApiResponse<List<OrderDto>> response = new ApiResponse<>();
+        List<OrderDto> orders = orderService.getOrdersPage(pageable);
         if (!CollectionUtils.isEmpty(orders)) {
             response.setSuccess(true);
             response.setData(orders);
@@ -54,7 +76,7 @@ public class OrderController {
 
     @DeleteMapping("/{orderId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteOrderyId(@PathVariable("orderId") Integer orderId) {
+    public void deleteOrderById(@PathVariable("orderId") Integer orderId) {
         orderService.delete(orderId);
     }
 }
