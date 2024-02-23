@@ -7,8 +7,14 @@ public class Main {
         // 3 JVM bytecode -> machine code
         // 4 first run: source -> javac -> interpreter -> machineCode
         // 5 if some piece of code sing frequently -  jmv using jit compiler (kinda caching for hot code)
+        // avarage c++ code or java not optimized code (JIT could make it better then c++)
         // 6 JRE gone
         // 7 imports for classloaders
+
+        // https://www.examclouds.com/java/java-core-russian/jdk-jre-jvm
+        // https://www.digitalocean.com/community/tutorials/java-jvm-memory-model-memory-management-in-java
+
+        //todo memory leak
 
 
         //todo other methods
