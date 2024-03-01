@@ -1,6 +1,6 @@
 //package com.company.juniorcrudservice.controller.order.data;
 //
-//import com.company.juniorcrudservice.dto.order.OrderDto;
+//import com.company.juniorcrudservice.dto.OrderDto;
 //import com.company.juniorcrudservice.model.order.jpa.Order;
 //import com.company.juniorcrudservice.model.order.jpa.Product;
 //import com.company.juniorcrudservice.repository.order.spring_jpa.OrderRepository;

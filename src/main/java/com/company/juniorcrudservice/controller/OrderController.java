@@ -1,7 +1,7 @@
-package com.company.juniorcrudservice.controller.order;
+package com.company.juniorcrudservice.controller;
 
 import com.company.juniorcrudservice.controller.response.ApiResponse;
-import com.company.juniorcrudservice.dto.order.OrderDto;
+import com.company.juniorcrudservice.dto.OrderDto;
 import com.company.juniorcrudservice.service.order.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;

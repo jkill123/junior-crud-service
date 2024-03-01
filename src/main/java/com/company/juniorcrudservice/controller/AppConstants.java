@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.controller.order;
+package com.company.juniorcrudservice.controller;
 
 public class AppConstants {
 

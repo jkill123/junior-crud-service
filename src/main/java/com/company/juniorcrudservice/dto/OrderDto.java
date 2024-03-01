@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.dto.order;
+package com.company.juniorcrudservice.dto;
 
 import lombok.*;
 

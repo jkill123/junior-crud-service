@@ -9,12 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EmployeeDto {
+public class ProductDto {
 
     private Integer id;
     private String name;
-    private String surName;
-    private String description;
-    private String position;
-    private Integer age;
+    private Double cost;
 }

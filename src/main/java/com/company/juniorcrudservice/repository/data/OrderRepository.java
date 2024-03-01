@@ -1,14 +1,10 @@
-package com.company.juniorcrudservice.repository.order.data;
+package com.company.juniorcrudservice.repository.data;
 
-import com.company.juniorcrudservice.model.order.data.Order;
-import org.springframework.context.annotation.Profile;
+import com.company.juniorcrudservice.model.data.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 //@Profile("!local")

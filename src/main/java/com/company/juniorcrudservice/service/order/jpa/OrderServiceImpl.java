@@ -1,7 +1,7 @@
 //package com.company.juniorcrudservice.service.order.jpa;
 //
 //import com.company.juniorcrudservice.converter.OrderConverter;
-//import com.company.juniorcrudservice.dto.order.OrderDto;
+//import com.company.juniorcrudservice.dto.OrderDto;
 //import com.company.juniorcrudservice.mappers.OrderMapper;
 //import com.company.juniorcrudservice.model.order.jpa.Order;
 //import com.company.juniorcrudservice.repository.order.spring_jpa.OrderRepository;

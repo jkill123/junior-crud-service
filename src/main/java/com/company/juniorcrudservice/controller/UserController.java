@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.controller.user;
+package com.company.juniorcrudservice.controller;
 
 import com.company.juniorcrudservice.dto.UserDto;
 import com.company.juniorcrudservice.service.user.UserService;

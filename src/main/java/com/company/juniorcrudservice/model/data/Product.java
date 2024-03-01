@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.model.order.data;
+package com.company.juniorcrudservice.model.data;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;

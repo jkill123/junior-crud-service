@@ -1,6 +1,6 @@
 //package com.company.juniorcrudservice.mappers;
 //
-//import com.company.juniorcrudservice.dto.order.ProductDto;
+//import com.company.juniorcrudservice.dto.ProductDto;
 //import com.company.juniorcrudservice.model.order.jpa.Product;
 //import org.mapstruct.Mapper;
 //

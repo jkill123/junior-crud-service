@@ -1,6 +1,6 @@
 //package com.company.juniorcrudservice.mappers;
 //
-//import com.company.juniorcrudservice.dto.order.OrderDto;
+//import com.company.juniorcrudservice.dto.OrderDto;
 //import com.company.juniorcrudservice.model.order.jpa.Order;
 //import org.mapstruct.InjectionStrategy;
 //import org.mapstruct.Mapper;
