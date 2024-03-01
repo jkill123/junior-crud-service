@@ -11,9 +11,7 @@ import java.util.List;
 public interface OrderService {
     OrderDto getOrderById(Integer id);
 
-    List<OrderDto> getOrders();
-
-    List<OrderDto> getOrdersPage(Pageable pageable);
+    List<OrderDto> getOrders(Pageable pageable);
 
     void save(OrderDto dto);
 

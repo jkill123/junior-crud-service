@@ -28,13 +28,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<OrderDto> getOrders() {
-        Iterable<Order> orders = orderRepository.findAll();
-        return orderConverter.fromModel(orders);
-    }
-
-    @Override
-    public List<OrderDto> getOrdersPage(Pageable pageable) {
+    public List<OrderDto> getOrders(Pageable pageable) {
         Page<Order> page = orderRepository.findAll(pageable);
         List<Order> orders = page.getContent();
         return orderConverter.fromModel(orders);

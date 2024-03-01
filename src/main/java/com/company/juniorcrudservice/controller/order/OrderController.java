@@ -23,19 +23,7 @@ public class OrderController {
 
     @CrossOrigin("*")
     @GetMapping()
-    public ApiResponse<List<OrderDto>> getOrders() {
-        ApiResponse<List<OrderDto>> response = new ApiResponse<>();
-        List<OrderDto> orders = orderService.getOrders();
-        if (!CollectionUtils.isEmpty(orders)) {
-            response.setSuccess(true);
-            response.setData(orders);
-        }
-        return response;
-    }
-
-    @CrossOrigin("*")
-    @GetMapping("/pagination")
-    public ApiResponse<List<OrderDto>> getOrdersPagination(@RequestParam(value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER, required = false) int pageNo,
+    public ApiResponse<List<OrderDto>> getOrders(@RequestParam(value = "pageNo", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER, required = false) int pageNo,
                                                            @RequestParam(value = "pageSize", defaultValue = AppConstants.DEFAULT_PAGE_SIZE, required = false) int pageSize,
                                                            @RequestParam(value = "sortBy", defaultValue = AppConstants.DEFAULT_SORT_BY, required = false) String sortBy,
                                                            @RequestParam(value = "sortDir", defaultValue = AppConstants.DEFAULT_SORT_DIRECTION, required = false) String sortDir) {
@@ -44,7 +32,7 @@ public class OrderController {
         Pageable pageable = PageRequest.of(pageNo, pageSize, sort);
 
         ApiResponse<List<OrderDto>> response = new ApiResponse<>();
-        List<OrderDto> orders = orderService.getOrdersPage(pageable);
+        List<OrderDto> orders = orderService.getOrders(pageable);
         if (!CollectionUtils.isEmpty(orders)) {
             response.setSuccess(true);
             response.setData(orders);
