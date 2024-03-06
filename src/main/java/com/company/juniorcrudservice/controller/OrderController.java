@@ -9,10 +9,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
+import static org.springframework.util.CollectionUtils.isEmpty;
 
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/orders")
@@ -33,7 +34,7 @@ public class OrderController {
 
         ApiResponse<List<OrderDto>> response = new ApiResponse<>();
         List<OrderDto> orders = orderService.getOrders(pageable);
-        if (!CollectionUtils.isEmpty(orders)) {
+        if (!isEmpty(orders)) {
             response.setSuccess(true);
             response.setData(orders);
         }
