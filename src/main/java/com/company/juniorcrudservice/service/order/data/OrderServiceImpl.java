@@ -2,8 +2,8 @@ package com.company.juniorcrudservice.service.order.data;
 
 import com.company.juniorcrudservice.converter.OrderConverter;
 import com.company.juniorcrudservice.dto.OrderDto;
-import com.company.juniorcrudservice.model.data.Order;
-import com.company.juniorcrudservice.repository.data.OrderRepository;
+import com.company.juniorcrudservice.model.Order;
+import com.company.juniorcrudservice.repository.OrderRepository;
 import com.company.juniorcrudservice.service.order.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

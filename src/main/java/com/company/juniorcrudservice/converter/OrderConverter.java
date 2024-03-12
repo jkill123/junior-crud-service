@@ -2,8 +2,8 @@ package com.company.juniorcrudservice.converter;
 
 import com.company.juniorcrudservice.dto.OrderDto;
 import com.company.juniorcrudservice.dto.ProductDto;
-import com.company.juniorcrudservice.model.data.Order;
-import com.company.juniorcrudservice.model.data.Product;
+import com.company.juniorcrudservice.model.Order;
+import com.company.juniorcrudservice.model.Product;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

@@ -2,8 +2,8 @@ package com.company.juniorcrudservice.service.order.data;
 
 import com.company.juniorcrudservice.converter.OrderConverter;
 import com.company.juniorcrudservice.dto.OrderDto;
-import com.company.juniorcrudservice.model.data.Order;
-import com.company.juniorcrudservice.repository.data.OrderRepository;
+import com.company.juniorcrudservice.model.Order;
+import com.company.juniorcrudservice.repository.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -60,8 +60,6 @@ class OrderServiceImplTest {
 
     @Test
     void shouldNotReturnOrderById() {
-        assertThrows(NoSuchElementException.class, () -> {
-            testInstance.getOrderById(ORDER_ID);
-        });
+        assertThrows(NoSuchElementException.class, () -> testInstance.getOrderById(ORDER_ID));
     }
 }
