@@ -1,7 +1,7 @@
 package com.company.juniorcrudservice.controller.order.data;
 
 import com.company.juniorcrudservice.dto.OrderDto;
-import com.company.juniorcrudservice.service.order.OrderService;
+import com.company.juniorcrudservice.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

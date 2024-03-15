@@ -1,7 +1,7 @@
-package com.company.juniorcrudservice.service.order.data;
+package com.company.juniorcrudservice.service;
 
-import com.company.juniorcrudservice.converter.OrderConverter;
 import com.company.juniorcrudservice.dto.OrderDto;
+import com.company.juniorcrudservice.mappers.OrderMapper;
 import com.company.juniorcrudservice.model.Order;
 import com.company.juniorcrudservice.repository.OrderRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -31,7 +31,7 @@ class OrderServiceImplTest {
     private OrderRepository orderRepository;
 
     @Mock
-    private OrderConverter orderConverter;
+    private OrderMapper orderMapper;
 
     @Mock
     private Order order;
@@ -48,12 +48,12 @@ class OrderServiceImplTest {
     @Test
     void shouldReturnOrderById() {
         when(orderRepository.findById(anyInt())).thenReturn(Optional.of(order));
-        when(orderConverter.fromModel(order)).thenReturn(dto);
+        when(orderMapper.orderToOrderDto(order)).thenReturn(dto);
 
         OrderDto result = testInstance.getOrderById(ORDER_ID);
 
         verify(orderRepository).findById(ORDER_ID);
-        verify(orderConverter).fromModel(order);
+        verify(orderMapper).orderToOrderDto(order);
         assertNotNull(result);
         assertEquals(ORDER_ID, result.getId());
     }

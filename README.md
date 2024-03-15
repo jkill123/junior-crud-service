@@ -4,7 +4,7 @@
 
 #### for local run
 - active profile "default"
-- testing profile "dev"
+- testing profile "test"
 - postgresDB run from docker
 
 #### API

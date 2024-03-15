@@ -1,4 +1,4 @@
-package com.company.juniorcrudservice.service.order;
+package com.company.juniorcrudservice.service;
 
 
 import com.company.juniorcrudservice.dto.OrderDto;
